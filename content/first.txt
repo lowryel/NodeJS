@@ -1,0 +1,2 @@
+Hello this object will hold all the information necessary to parse the command line into Python data
+types.
