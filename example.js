@@ -100,3 +100,9 @@ module.exports = purple; // export a single method
 // module.exports.purple= purple; // to export the entire object
 
 
+setTimeout(() => {
+  console.log("Hello world!!!");
+})
+
+console.log("This will run first");
+

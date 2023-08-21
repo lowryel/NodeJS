@@ -1,8 +1,19 @@
 const { createServer } = require("http");
+const fs = require("fs")
+
 
 const server = createServer((req, res) => {
+    const filestream = fs.createReadStream("./content/first.txt", "utf8")
     if (req.url==="/"){ //making a request to a server 
-        res.write("Hello from NodeLand!");
+        // res.write("Hello from NodeLand!");
+        // const text = fs.readFileSync("./content/first.txt", "utf8")
+        filestream.on("open", ()=>{
+            filestream.pipe(res)
+        })
+        console.log("response passed...");
+        filestream.on("error", (err)=>{
+            res.end(err)
+        })
         res.end(); // will return you a response
     }
 
