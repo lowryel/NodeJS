@@ -1,8 +1,19 @@
 function Person(name, age) {
-    console.log("This is a method");
+    // console.log("This is a method");
     this.name=name;
     this.age=age;
 }
+
+const newArray = ["hello", "world", "dear", "you", "beautiful"]
+// console.log(newArray);
+
+const getArray = newArray.map((Array)=>{
+    const items = Array
+    console.log(items);
+})
+
+
+
 // instantiate an object with new ObjectName
 const Eugene = new Person("Thomas", 30)
 const thiago=new Person("Thiago", 24)
