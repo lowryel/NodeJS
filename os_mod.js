@@ -11,3 +11,6 @@ const osInfo = {
 }
 
 console.log(osInfo);
+
+const parallelism=os.availableParallelism()
+console.log(parallelism);

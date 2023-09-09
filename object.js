@@ -12,8 +12,6 @@ const getArray = newArray.map((Array)=>{
     console.log(items);
 })
 
-
-
 // instantiate an object with new ObjectName
 const Eugene = new Person("Thomas", 30)
 const thiago=new Person("Thiago", 24)
