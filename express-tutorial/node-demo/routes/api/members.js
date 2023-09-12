@@ -1,7 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const products = require("../../data")
+const products = require("../../data");
 const uuid = require("uuid");
+// const appDataSource = require("../../datasource")
+// const Photo = require("../../TypeORM")
+
+// const userData = appDataSource.getRepository(Photo)
+
+// const user = new Photo()
+// user.name="Demo";
+// user.email = "demo2@gmail.com"
+// await appDataSource.save(user)
 
 // Get all products
 router.get('/', (req, res) => {

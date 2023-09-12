@@ -1,3 +1,4 @@
+const reflectMetadata = require("reflect-metadata")
 const express = require('express')
 const app = express()
 const router = require('./routes/api/members');
@@ -5,6 +6,8 @@ const path = require("path");
 const pug = require('pug');
 const port = 3000;
 const products = require("./data");
+const db = require("./queries");
+
 
 const logger = require("./middleware/Logger");
 const uuid = require("uuid");
@@ -25,9 +28,13 @@ app.use(express.static(path.join(__dirname, "./public")));
 // products API routes
 app.use("/api/members", router) // require('./routes/api/members'))
 
+app.get("/users", db.getUsers);
+app.get("/users/:id", db.getOneUser);
+app.post("/users", db.createUser);
+
+
 // Init middleware
 app.use(logger);
-
 
 app.all("*", (req, res)=>{ //returns error on any resource which is not found 
   // res.writeHead(404, {'content-type': 'text/htmreq.body.availabilityl'})
@@ -35,7 +42,6 @@ app.all("*", (req, res)=>{ //returns error on any resource which is not found
   // res.end()
   res.status(400).json({ msg:"Content not available" })
 })
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -8,3 +8,12 @@
 //   res.sendFile(path.resolve(__dirname, "./style.css"))
 //    res.end()
 // })
+
+##### Assigning privileges to database in postgres
+- run `CREATE DATABASE <dbname>;`
+- `CREATE USER <username> WITH ENCRYPTED PASSWORD '<password>';`
+- `GRANT ALL PRIVILEGES ON DATABASE <dbname> TO <username>;`
+* If you experience a permission denied error, 
+  - #### FIX: 
+    - GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO <username>;
+
