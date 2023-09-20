@@ -6,7 +6,7 @@ const AppDataSource = new DataSource({
     host: "localhost",
     port: 5432,
     username: "eugene",
-    password: "cartelo009",
+    password: "lo009",
     database: "films",
     enttiies: [photo],
     logging: false,
