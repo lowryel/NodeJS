@@ -1,7 +1,8 @@
-const Pool = require("pg").Pool;
+import Pool from "pg";
 
+// const pgPool = Pool.Pool()
 
-const db = new Pool({
+const db = new Pool.Pool({
   host: 'localhost',
   user:'eugene',
   port:'5432',
@@ -53,7 +54,7 @@ const createUser = (request, response) => {
     })
 }
 
-module.exports = {
+export default {
     getUsers,
     getOneUser,
     createUser,

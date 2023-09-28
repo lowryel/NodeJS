@@ -1,5 +1,5 @@
-const { DataSource } = require("typeorm");
-const photo = require("./TypeORM");
+import { DataSource } from "typeorm";
+import photo from "./TypeORM";
 
 const AppDataSource = new DataSource({
     type: "postgres",
@@ -12,4 +12,4 @@ const AppDataSource = new DataSource({
     logging: false,
 })
 
-module.exports=AppDataSource;
+export default AppDataSource;

@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const products = require("../../data");
-const uuid = require("uuid");
+import products from "../../data.js";
+import "uuid";
 // const appDataSource = require("../../datasource")
 // const Photo = require("../../TypeORM")
 
@@ -86,4 +86,4 @@ router.delete("/:productID", (req, res)=>{
   }
 })
 
-module.exports = router;
+export default router;

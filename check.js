@@ -1,4 +1,6 @@
-const { log } = require("util");
+console.log(node);
+
+import { log } from "util";
 
 function bluecheck(check=true) {
     if (check){
@@ -8,7 +10,5 @@ function bluecheck(check=true) {
         console.log('Not eligible for ad revenue')
     }
 }
-
-module.exports = bluecheck;
-
-console.log(module.exports);
+log("hello")
+export default bluecheck;

@@ -1,12 +1,12 @@
-const express = require('express')
+import express from 'express';
 const app = express()
 // const router = require('./routes/api/members');
-const path = require("path");
+import path from "path";
 const port = 3000
 // const msql = require("mysql");
 
-const logger = require("./middleware/Logger")
-const uuid = require("uuid");
+import logger from "./middleware/Logger.js"
+import uuid from "uuid";
 
 // const { readFileSync } = require("fs");
 // const readfile = path.("./index.html", "utf8");

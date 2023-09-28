@@ -1,16 +1,15 @@
-const reflectMetadata = require("reflect-metadata")
-const express = require('express')
+import reflectMetadata from "reflect-metadata"
+import express from 'express'
 const app = express()
-const router = require('./routes/api/members');
-const path = require("path");
-const pug = require('pug');
+import router from './routes/api/members.js';
+import path from "path";
+import pug from 'pug';
 const port = 3000;
-const products = require("./data");
-const db = require("./queries");
+import products from "./data.js";
+import db from "./queries.js";
 
-
-const logger = require("./middleware/Logger");
-const uuid = require("uuid");
+import logger from "./middleware/Logger.js";
+import "uuid";
 
 // template handling using pug, formally jade middleware
 app.set("views", ('./views'));
@@ -23,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 // Homepage Route
 app.get('/', (req, res) => res.render("main", {products}))
 
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join("./public/")));
 
 // products API routes
 app.use("/api/members", router) // require('./routes/api/members'))
@@ -38,7 +37,7 @@ app.use(logger);
 
 app.all("*", (req, res)=>{ //returns error on any resource which is not found 
   // res.writeHead(404, {'content-type': 'text/htmreq.body.availabilityl'})
-  res.sendFile(path.resolve(__dirname, "./404.html"))
+  res.sendFile(path.resolve("./404.html"))
   // res.end()
   res.status(400).json({ msg:"Content not available" })
 })

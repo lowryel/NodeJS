@@ -1,4 +1,4 @@
-const { Entity, Column } = require("typeorm");
+import { Entity, Column } from "typeorm";
 
 @Entity()
 class Photo{
@@ -10,4 +10,4 @@ class Photo{
     email
 }
 
-module.exports = { Photo };
+export default Photo;

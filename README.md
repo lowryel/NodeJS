@@ -15,5 +15,7 @@
 - `GRANT ALL PRIVILEGES ON DATABASE <dbname> TO <username>;`
 * If you experience a permission denied error, 
   - #### FIX: 
-    - GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO <username>;
+    - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO <username>`;
 
+- Parser is responsible for parsing form data from the frontend and is configured by
+* `app.use(express.urlencoded({ extended:false }))` then parse it in as `app.use(express.json())`
